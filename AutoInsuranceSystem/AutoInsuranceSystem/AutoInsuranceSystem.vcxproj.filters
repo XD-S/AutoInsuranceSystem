@@ -36,14 +36,23 @@
     <ClCompile Include="AutoInsuranceSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="insur_guaranteeslip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AutoInsuranceSystem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="insur_guaranteeslip.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AutoInsuranceSystem.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="insur_guaranteeslip.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
