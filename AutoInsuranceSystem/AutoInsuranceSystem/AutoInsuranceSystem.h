@@ -11,11 +11,12 @@ class AutoInsuranceSystem : public QMainWindow
 
 public:
 	AutoInsuranceSystem(QWidget *parent = Q_NULLPTR);
+	
 public slots:
-	void click();
+	void Insured_click();
 
 private:
 	Ui::AutoInsuranceSystemClass ui;
 
-	insur_guaranteeslip * d;
+	/*insur_guaranteeslip * d = Q_NULLPTR;*/
 };

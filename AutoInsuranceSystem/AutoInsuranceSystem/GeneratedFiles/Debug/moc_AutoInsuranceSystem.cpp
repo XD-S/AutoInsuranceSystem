@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AutoInsuranceSystem_t {
     QByteArrayData data[3];
-    char stringdata0[27];
+    char stringdata0[35];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,11 +32,11 @@ struct qt_meta_stringdata_AutoInsuranceSystem_t {
 static const qt_meta_stringdata_AutoInsuranceSystem_t qt_meta_stringdata_AutoInsuranceSystem = {
     {
 QT_MOC_LITERAL(0, 0, 19), // "AutoInsuranceSystem"
-QT_MOC_LITERAL(1, 20, 5), // "click"
-QT_MOC_LITERAL(2, 26, 0) // ""
+QT_MOC_LITERAL(1, 20, 13), // "Insured_click"
+QT_MOC_LITERAL(2, 34, 0) // ""
 
     },
-    "AutoInsuranceSystem\0click\0"
+    "AutoInsuranceSystem\0Insured_click\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +68,7 @@ void AutoInsuranceSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         AutoInsuranceSystem *_t = static_cast<AutoInsuranceSystem *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->click(); break;
+        case 0: _t->Insured_click(); break;
         default: ;
         }
     }

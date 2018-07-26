@@ -9,12 +9,15 @@ AutoInsuranceSystem::AutoInsuranceSystem(QWidget *parent)
 
 
 	//绑定按钮的槽函数
-	connect(ui.pushButton, SIGNAL(clicked()),this, SLOT(click()));
-	
+	connect(ui.Insured, SIGNAL(clicked()),this, SLOT(Insured_click()));
+
 }
-void AutoInsuranceSystem::click()
+void AutoInsuranceSystem::Insured_click()
 {
-	if(d== Q_NULLPTR) d = new insur_guaranteeslip(this);
+	/*if(d == Q_NULLPTR) d = new insur_guaranteeslip(this);
+	if (d != Q_NULLPTR) d->show();*/
+	insur_guaranteeslip *d = new insur_guaranteeslip(this);
+	//设置父窗口不可用
+	d->setWindowModality(Qt::ApplicationModal);
 	d->show();
-	this->hide();
 }

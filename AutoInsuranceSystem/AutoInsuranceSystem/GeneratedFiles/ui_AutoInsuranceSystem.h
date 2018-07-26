@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
@@ -22,7 +23,8 @@ class Ui_AutoInsuranceSystemClass
 {
 public:
     QWidget *centralWidget;
-    QPushButton *pushButton;
+    QPushButton *Insured;
+    QFrame *line;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *AutoInsuranceSystemClass)
@@ -30,7 +32,7 @@ public:
         if (AutoInsuranceSystemClass->objectName().isEmpty())
             AutoInsuranceSystemClass->setObjectName(QStringLiteral("AutoInsuranceSystemClass"));
         AutoInsuranceSystemClass->setEnabled(true);
-        AutoInsuranceSystemClass->resize(246, 400);
+        AutoInsuranceSystemClass->resize(1200, 800);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -38,9 +40,14 @@ public:
         AutoInsuranceSystemClass->setSizePolicy(sizePolicy);
         centralWidget = new QWidget(AutoInsuranceSystemClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(40, 30, 171, 71));
+        Insured = new QPushButton(centralWidget);
+        Insured->setObjectName(QStringLiteral("Insured"));
+        Insured->setGeometry(QRect(10, 10, 110, 40));
+        line = new QFrame(centralWidget);
+        line->setObjectName(QStringLiteral("line"));
+        line->setGeometry(QRect(120, 0, 20, 800));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
         AutoInsuranceSystemClass->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(AutoInsuranceSystemClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -54,7 +61,7 @@ public:
     void retranslateUi(QMainWindow *AutoInsuranceSystemClass)
     {
         AutoInsuranceSystemClass->setWindowTitle(QApplication::translate("AutoInsuranceSystemClass", "AutoInsuranceSystem", nullptr));
-        pushButton->setText(QApplication::translate("AutoInsuranceSystemClass", "\346\212\225\344\277\235", nullptr));
+        Insured->setText(QApplication::translate("AutoInsuranceSystemClass", "\346\212\225\344\277\235", nullptr));
     } // retranslateUi
 
 };

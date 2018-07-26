@@ -11,8 +11,12 @@ public:
 	insur_guaranteeslip(QWidget *parent = Q_NULLPTR);
 	//~insur_guaranteeslip();
 
+public slots:
+	void Entry_click();
+	void Cancel_click();
 private:
 	void closeEvent(QCloseEvent *event);
+
 	Ui::Form ui;
 	QWidget *parent;
 };
