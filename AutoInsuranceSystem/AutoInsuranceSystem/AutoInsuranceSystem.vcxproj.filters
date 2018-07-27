@@ -39,6 +39,15 @@
     <ClCompile Include="insur_guaranteeslip.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sys_insurancecomputer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sys_employeeinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="case_reportcaseinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AutoInsuranceSystem.h">
@@ -47,12 +56,30 @@
     <QtMoc Include="insur_guaranteeslip.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="sys_insurancecomputer.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="sys_employeeinfo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="case_reportcaseinfo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AutoInsuranceSystem.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="insur_guaranteeslip.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="sys_insurancecomputer.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="sys_employeeinfo.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="case_reportcaseinfo.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

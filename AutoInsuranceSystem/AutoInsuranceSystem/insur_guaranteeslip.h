@@ -17,6 +17,6 @@ public slots:
 private:
 	void closeEvent(QCloseEvent *event);
 
-	Ui::Form ui;
+	Ui::insur_guaranteeslipForm ui;
 	QWidget *parent;
 };

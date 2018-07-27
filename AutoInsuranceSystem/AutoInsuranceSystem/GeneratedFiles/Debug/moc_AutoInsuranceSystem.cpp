@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AutoInsuranceSystem_t {
-    QByteArrayData data[3];
-    char stringdata0[35];
+    QByteArrayData data[6];
+    char stringdata0[92];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,10 +33,15 @@ static const qt_meta_stringdata_AutoInsuranceSystem_t qt_meta_stringdata_AutoIns
     {
 QT_MOC_LITERAL(0, 0, 19), // "AutoInsuranceSystem"
 QT_MOC_LITERAL(1, 20, 13), // "Insured_click"
-QT_MOC_LITERAL(2, 34, 0) // ""
+QT_MOC_LITERAL(2, 34, 0), // ""
+QT_MOC_LITERAL(3, 35, 18), // "CompanyEntry_click"
+QT_MOC_LITERAL(4, 54, 20), // "PersonnelEntry_click"
+QT_MOC_LITERAL(5, 75, 16) // "ClaimEntry_click"
 
     },
-    "AutoInsuranceSystem\0Insured_click\0"
+    "AutoInsuranceSystem\0Insured_click\0\0"
+    "CompanyEntry_click\0PersonnelEntry_click\0"
+    "ClaimEntry_click"
 };
 #undef QT_MOC_LITERAL
 
@@ -46,7 +51,7 @@ static const uint qt_meta_data_AutoInsuranceSystem[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -54,9 +59,15 @@ static const uint qt_meta_data_AutoInsuranceSystem[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a /* Public */,
+       1,    0,   34,    2, 0x0a /* Public */,
+       3,    0,   35,    2, 0x0a /* Public */,
+       4,    0,   36,    2, 0x0a /* Public */,
+       5,    0,   37,    2, 0x0a /* Public */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -69,6 +80,9 @@ void AutoInsuranceSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->Insured_click(); break;
+        case 1: _t->CompanyEntry_click(); break;
+        case 2: _t->PersonnelEntry_click(); break;
+        case 3: _t->ClaimEntry_click(); break;
         default: ;
         }
     }
@@ -100,13 +114,13 @@ int AutoInsuranceSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 4;
     }
     return _id;
 }

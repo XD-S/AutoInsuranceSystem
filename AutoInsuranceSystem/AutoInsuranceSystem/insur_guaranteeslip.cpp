@@ -10,17 +10,10 @@ insur_guaranteeslip::insur_guaranteeslip(QWidget *parent)
 	this->setFixedSize(this->size());
 	//上下文环境
 	this->parent = parent;
-	//this->setEnabled(true);
-	/*
-	//商业险号，输入限制,仅仅能输入数字
-	QRegExp regx("[0-9]+$");
-	QValidator *validator = new QRegExpValidator(regx, ui.CommercialRiskCode);
-	ui.CommercialRiskCode->setValidator(validator);
-	//交强险号,输入限制，仅仅能输入数字
-	ui.TrafficRiskCode->setValidator(validator);
-	*/
+
 	connect(ui.Entry, SIGNAL(clicked()),this,SLOT(Entry_click()));
 	connect(ui.Cancel, SIGNAL(clicked()), this, SLOT(Cancel_click()));
+	
 }
 void insur_guaranteeslip::Cancel_click()
 {
