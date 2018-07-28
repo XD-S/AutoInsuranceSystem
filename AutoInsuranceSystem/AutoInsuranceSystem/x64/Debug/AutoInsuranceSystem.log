@@ -1,1 +1,5 @@
-﻿  AutoInsuranceSystem.vcxproj -> F:\github\AutoInsuranceSystem\AutoInsuranceSystem\x64\Debug\AutoInsuranceSystem.exe
+﻿  Moc'ing AutoInsuranceSystem.h...
+  moc_AutoInsuranceSystem.cpp
+  AutoInsuranceSystem.cpp
+  main.cpp
+  AutoInsuranceSystem.vcxproj -> F:\github\AutoInsuranceSystem\AutoInsuranceSystem\x64\Debug\AutoInsuranceSystem.exe

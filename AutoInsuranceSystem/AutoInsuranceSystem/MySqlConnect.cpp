@@ -82,7 +82,9 @@ void MySqlConnect::AddItem(string TableName, QStandardItemModel * Model, vector<
 			for (int i = 0; i < items.size(); i++)
 			{
 				QString str = QString(row[items[i]]);
-				Model->setItem(k, i, new QStandardItem(str));
+				QStandardItem * temp = new QStandardItem(str);
+				temp->setEditable(false);
+				Model->setItem(k, i, temp);
 			}
 			k++;
 		}
@@ -94,6 +96,59 @@ void MySqlConnect::AddItem(string TableName, QStandardItemModel * Model, vector<
 	catch (...)
 	{
 		cout << "MySQL operation is error" << endl;
+	}
+}
+
+bool MySqlConnect::UpdateId(string TableName)
+{
+	try
+	{
+		if (mysql_query(&mysql, ("use " + database + ";").c_str()))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		if (mysql_query(&mysql, ("call UpdateId_" + TableName + "();").c_str()))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		return true;
+	}
+	catch (string &error_msg)
+	{
+		cout << error_msg << endl;
+		return false;
+	}
+	catch (...)
+	{
+		cout << "MySQL operation is error" << endl;
+		return false;
+	}
+}
+
+bool MySqlConnect::Command(string command)
+{
+	try
+	{
+		//mysql_query(&mysql, "set names gbk");
+		if (mysql_query(&mysql, ("use " + database + ";").c_str()))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		if (mysql_query(&mysql, command.c_str()))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		return true;
+	}
+	catch (string &error_msg)
+	{
+		cout << error_msg << endl;
+		return false;
+	}
+	catch (...)
+	{
+		cout << "MySQL operation is error" << endl;
+		return false;
 	}
 }
 

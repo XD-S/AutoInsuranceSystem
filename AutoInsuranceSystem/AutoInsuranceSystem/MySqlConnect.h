@@ -14,7 +14,8 @@ public:
 	void closeConnect();
 	int GetItemNumber(string TableName);
 	void AddItem(string TableName, QStandardItemModel *Model, vector<int> items);
-
+	bool UpdateId(string TableName);
+	bool Command(string command);
 
 	void operation(string TableName);
 

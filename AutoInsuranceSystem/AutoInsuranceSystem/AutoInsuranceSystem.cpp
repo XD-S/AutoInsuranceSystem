@@ -14,6 +14,19 @@ AutoInsuranceSystem::AutoInsuranceSystem(QWidget *parent)
 	connect(ui.PersonnelEntry, SIGNAL(clicked()), this, SLOT(PersonnelEntry_click()));
 	connect(ui.ClaimEntry, SIGNAL(clicked()), this, SLOT(ClaimEntry_click()));
 
+	this->UpdateViewTable();
+	
+}
+void AutoInsuranceSystem::Insured_click()
+{
+	insur_guaranteeslip *d = new insur_guaranteeslip(this);
+	//设置父窗口不可用
+	d->setWindowModality(Qt::ApplicationModal);
+	d->show();
+}
+
+void AutoInsuranceSystem::UpdateViewTable()
+{
 	//保单管理的表头初始化设置
 	InsuredModel = new QStandardItemModel(q->GetItemNumber("insur_guaranteeslip"), 10);
 	ui.InsuredTableView->setModel(InsuredModel);
@@ -22,6 +35,8 @@ AutoInsuranceSystem::AutoInsuranceSystem(QWidget *parent)
 		InsuredModel->setHeaderData(i, Qt::Horizontal, tr(this->InsuredTableViewItem[i]));
 	}
 	q->AddItem("insur_guaranteeslip", InsuredModel, vector<int> {1, 2, 5, 4, 6, 7, 8, 9, 10, 11});
+	//设置整行选中
+	ui.InsuredTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
 
 	//基础设置的表头初始化
 	CompanyModel = new QStandardItemModel(q->GetItemNumber("sys_insurancecomputer"), 2);
@@ -32,6 +47,8 @@ AutoInsuranceSystem::AutoInsuranceSystem(QWidget *parent)
 	}
 	ui.CompanyTableView->setColumnWidth(1, 250);
 	q->AddItem("sys_insurancecomputer", CompanyModel, vector<int> {2, 3});
+	//设置整行选中
+	ui.CompanyTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
 
 	//团队管理的表头初始化
 	PersonnelModel = new QStandardItemModel(q->GetItemNumber("sys_employeeinfo"), 10);
@@ -41,6 +58,8 @@ AutoInsuranceSystem::AutoInsuranceSystem(QWidget *parent)
 		PersonnelModel->setHeaderData(i, Qt::Horizontal, tr(this->PersonnelTableViewItem[i]));
 	}
 	q->AddItem("sys_employeeinfo", PersonnelModel, vector<int> {1, 2, 4, 5, 7, 8, 6, 13, 10, 9});
+	//设置整行选中
+	ui.PersonnelTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
 
 	//理赔管理的表头初始化
 	ClaimModel = new QStandardItemModel(q->GetItemNumber("case_reportcaseinfo"), 10);
@@ -50,13 +69,8 @@ AutoInsuranceSystem::AutoInsuranceSystem(QWidget *parent)
 		ClaimModel->setHeaderData(i, Qt::Horizontal, tr(this->ClaimTableViewItem[i]));
 	}
 	q->AddItem("case_reportcaseinfo", ClaimModel, vector<int> {1, 5, 4, 14, 8, 2, 11, 15, 10, 12});
-}
-void AutoInsuranceSystem::Insured_click()
-{
-	insur_guaranteeslip *d = new insur_guaranteeslip(this);
-	//设置父窗口不可用
-	d->setWindowModality(Qt::ApplicationModal);
-	d->show();
+	//设置整行选中
+	ui.ClaimTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
 }
 
 void AutoInsuranceSystem::CompanyEntry_click()

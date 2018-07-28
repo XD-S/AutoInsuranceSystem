@@ -17,6 +17,7 @@ class AutoInsuranceSystem : public QMainWindow
 
 public:
 	AutoInsuranceSystem(QWidget *parent = Q_NULLPTR);
+	void UpdateViewTable();
 
 public slots:
 	void Insured_click();
