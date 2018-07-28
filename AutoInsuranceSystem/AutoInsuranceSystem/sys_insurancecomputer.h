@@ -3,13 +3,14 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_sys_insurancecomputer.h"
 #include "MySqlConnect.h"
+#include "AutoInsuranceSystem.h"
 extern MySqlConnect *q;
 class sys_insurancecomputer : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	sys_insurancecomputer(QWidget *parent = Q_NULLPTR);
+	sys_insurancecomputer(QWidget *parent = Q_NULLPTR,int items=-1);
 	//~insur_guaranteeslip();
 
 public slots:
@@ -19,6 +20,10 @@ public slots:
 private:
 	void closeEvent(QCloseEvent *event);
 	string GetInsertCommand();
+	string GetUpdateCommand();
+	void LoadInformation();
+
 	Ui::sys_insurancecomputerForm ui;
 	QWidget *parent;
+	int item;
 };

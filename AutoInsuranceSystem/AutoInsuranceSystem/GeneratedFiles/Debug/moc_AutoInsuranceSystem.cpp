@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AutoInsuranceSystem_t {
-    QByteArrayData data[6];
-    char stringdata0[92];
+    QByteArrayData data[12];
+    char stringdata0[214];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,12 +36,21 @@ QT_MOC_LITERAL(1, 20, 13), // "Insured_click"
 QT_MOC_LITERAL(2, 34, 0), // ""
 QT_MOC_LITERAL(3, 35, 18), // "CompanyEntry_click"
 QT_MOC_LITERAL(4, 54, 20), // "PersonnelEntry_click"
-QT_MOC_LITERAL(5, 75, 16) // "ClaimEntry_click"
+QT_MOC_LITERAL(5, 75, 16), // "ClaimEntry_click"
+QT_MOC_LITERAL(6, 92, 19), // "CompanyDelete_click"
+QT_MOC_LITERAL(7, 112, 21), // "PersonnelDelete_click"
+QT_MOC_LITERAL(8, 134, 29), // "CompanyViewTableDoubleClicked"
+QT_MOC_LITERAL(9, 164, 11), // "QModelIndex"
+QT_MOC_LITERAL(10, 176, 5), // "index"
+QT_MOC_LITERAL(11, 182, 31) // "PersonnelViewTableDoubleClicked"
 
     },
     "AutoInsuranceSystem\0Insured_click\0\0"
     "CompanyEntry_click\0PersonnelEntry_click\0"
-    "ClaimEntry_click"
+    "ClaimEntry_click\0CompanyDelete_click\0"
+    "PersonnelDelete_click\0"
+    "CompanyViewTableDoubleClicked\0QModelIndex\0"
+    "index\0PersonnelViewTableDoubleClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,7 +60,7 @@ static const uint qt_meta_data_AutoInsuranceSystem[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -59,16 +68,24 @@ static const uint qt_meta_data_AutoInsuranceSystem[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x0a /* Public */,
-       3,    0,   35,    2, 0x0a /* Public */,
-       4,    0,   36,    2, 0x0a /* Public */,
-       5,    0,   37,    2, 0x0a /* Public */,
+       1,    0,   54,    2, 0x0a /* Public */,
+       3,    0,   55,    2, 0x0a /* Public */,
+       4,    0,   56,    2, 0x0a /* Public */,
+       5,    0,   57,    2, 0x0a /* Public */,
+       6,    0,   58,    2, 0x0a /* Public */,
+       7,    0,   59,    2, 0x0a /* Public */,
+       8,    1,   60,    2, 0x0a /* Public */,
+      11,    1,   63,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 9,   10,
+    QMetaType::Void, 0x80000000 | 9,   10,
 
        0        // eod
 };
@@ -83,10 +100,13 @@ void AutoInsuranceSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 1: _t->CompanyEntry_click(); break;
         case 2: _t->PersonnelEntry_click(); break;
         case 3: _t->ClaimEntry_click(); break;
+        case 4: _t->CompanyDelete_click(); break;
+        case 5: _t->PersonnelDelete_click(); break;
+        case 6: _t->CompanyViewTableDoubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 7: _t->PersonnelViewTableDoubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject AutoInsuranceSystem::staticMetaObject = {
@@ -114,13 +134,13 @@ int AutoInsuranceSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 8;
     }
     return _id;
 }

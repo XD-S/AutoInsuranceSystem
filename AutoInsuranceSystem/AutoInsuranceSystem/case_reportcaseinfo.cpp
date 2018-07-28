@@ -2,9 +2,10 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <Qvalidator>
-case_reportcaseinfo::case_reportcaseinfo(QWidget *parent)
+case_reportcaseinfo::case_reportcaseinfo(QWidget *parent,int items)
 	: QMainWindow(parent)
 {
+	item = items;
 	ui.setupUi(this);
 	//固定窗口大小
 	this->setFixedSize(this->size());
@@ -13,6 +14,7 @@ case_reportcaseinfo::case_reportcaseinfo(QWidget *parent)
 
 	connect(ui.Entry, SIGNAL(clicked()), this, SLOT(Entry_click()));
 	connect(ui.Cancel, SIGNAL(clicked()), this, SLOT(Cancel_click()));
+	this->initQComboBox();
 
 }
 void case_reportcaseinfo::Cancel_click()
@@ -29,4 +31,12 @@ void case_reportcaseinfo::Entry_click()
 void case_reportcaseinfo::closeEvent(QCloseEvent *event)
 {
 	event->ignore();
+}
+
+void case_reportcaseinfo::initQComboBox()
+{
+	q->AddComboBoxItem("insur_guaranteeslip", "PlateNumber", ui.PlateNumber);
+	q->AddComboBoxItem("sys_employeeinfo", "EmployeeName", ui.EmployeeName);
+	ui.TimeOfOccurrenceOfCase->setDisplayFormat("yyyy-MM-dd");
+	ui.DateOfAcceptance->setDisplayFormat("yyyy-MM-dd");
 }

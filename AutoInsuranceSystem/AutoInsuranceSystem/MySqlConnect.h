@@ -1,6 +1,7 @@
 #ifndef MYSQLCONNECT_H
 #define MYSQLCONNECT_H
 #include "mysql.h"
+#include "QComboBox.h"
 #include <QStandardItemModel>
 #include <iostream>
 #include <string>
@@ -13,9 +14,12 @@ public:
 	MySqlConnect(string IP, string username, string password, string database);
 	void closeConnect();
 	int GetItemNumber(string TableName);
-	void AddItem(string TableName, QStandardItemModel *Model, vector<int> items);
+
 	bool UpdateId(string TableName);
 	bool Command(string command);
+	void AddItem(string TableName, QStandardItemModel *Model, vector<int> items);//初始化TableView
+	string GetItemSelect(string TableName,string Colunms,int item);//得到选择colunms的item选项的值
+	void AddComboBoxItem(string TableName,string Colunms, QComboBox * comboBox);//初始化ComboBox
 
 	void operation(string TableName);
 

@@ -95,5 +95,8 @@
     <ClInclude Include="MySqlConnect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CommonHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,4 @@
-﻿  Moc'ing AutoInsuranceSystem.h...
-  moc_AutoInsuranceSystem.cpp
+﻿  Rcc'ing AutoInsuranceSystem.qrc...
+  qrc_AutoInsuranceSystem.cpp
   AutoInsuranceSystem.cpp
-  main.cpp
   AutoInsuranceSystem.vcxproj -> F:\github\AutoInsuranceSystem\AutoInsuranceSystem\x64\Debug\AutoInsuranceSystem.exe

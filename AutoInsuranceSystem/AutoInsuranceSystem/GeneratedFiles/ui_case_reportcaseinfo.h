@@ -33,16 +33,13 @@ public:
     QLineEdit *Telephone;
     QDateEdit *DateOfAcceptance;
     QLabel *label_9;
-    QLineEdit *PlateNumber;
     QLabel *label_10;
     QLabel *label_11;
-    QComboBox *CompanyName;
     QLabel *label_12;
     QLineEdit *CauseOfCase;
     QLineEdit *Insurant;
     QLabel *label_13;
     QLabel *label_14;
-    QLineEdit *EmployeeName;
     QLineEdit *Department;
     QLabel *label_15;
     QLineEdit *DamageExpectancy;
@@ -59,6 +56,9 @@ public:
     QLabel *label_21;
     QPushButton *Cancel;
     QPushButton *Entry;
+    QComboBox *PlateNumber;
+    QComboBox *EmployeeName;
+    QLineEdit *CompanyName;
 
     void setupUi(QWidget *case_reportcaseinfoForm)
     {
@@ -104,10 +104,6 @@ public:
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setGeometry(QRect(30, 100, 60, 25));
         label_9->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        PlateNumber = new QLineEdit(case_reportcaseinfoForm);
-        PlateNumber->setObjectName(QStringLiteral("PlateNumber"));
-        PlateNumber->setGeometry(QRect(360, 100, 120, 25));
-        PlateNumber->setInputMethodHints(Qt::ImhNone);
         label_10 = new QLabel(case_reportcaseinfoForm);
         label_10->setObjectName(QStringLiteral("label_10"));
         label_10->setGeometry(QRect(300, 100, 60, 25));
@@ -116,10 +112,6 @@ public:
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setGeometry(QRect(560, 100, 60, 25));
         label_11->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        CompanyName = new QComboBox(case_reportcaseinfoForm);
-        CompanyName->setObjectName(QStringLiteral("CompanyName"));
-        CompanyName->setGeometry(QRect(620, 100, 120, 25));
-        CompanyName->setContextMenuPolicy(Qt::DefaultContextMenu);
         label_12 = new QLabel(case_reportcaseinfoForm);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(30, 140, 60, 25));
@@ -141,10 +133,6 @@ public:
         label_14->setObjectName(QStringLiteral("label_14"));
         label_14->setGeometry(QRect(30, 180, 60, 25));
         label_14->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        EmployeeName = new QLineEdit(case_reportcaseinfoForm);
-        EmployeeName->setObjectName(QStringLiteral("EmployeeName"));
-        EmployeeName->setGeometry(QRect(90, 180, 120, 25));
-        EmployeeName->setInputMethodHints(Qt::ImhNone);
         Department = new QLineEdit(case_reportcaseinfoForm);
         Department->setObjectName(QStringLiteral("Department"));
         Department->setEnabled(false);
@@ -210,6 +198,19 @@ public:
         Entry = new QPushButton(case_reportcaseinfoForm);
         Entry->setObjectName(QStringLiteral("Entry"));
         Entry->setGeometry(QRect(510, 480, 90, 40));
+        PlateNumber = new QComboBox(case_reportcaseinfoForm);
+        PlateNumber->setObjectName(QStringLiteral("PlateNumber"));
+        PlateNumber->setGeometry(QRect(360, 100, 120, 25));
+        PlateNumber->setContextMenuPolicy(Qt::DefaultContextMenu);
+        EmployeeName = new QComboBox(case_reportcaseinfoForm);
+        EmployeeName->setObjectName(QStringLiteral("EmployeeName"));
+        EmployeeName->setGeometry(QRect(90, 180, 120, 25));
+        EmployeeName->setContextMenuPolicy(Qt::DefaultContextMenu);
+        CompanyName = new QLineEdit(case_reportcaseinfoForm);
+        CompanyName->setObjectName(QStringLiteral("CompanyName"));
+        CompanyName->setEnabled(false);
+        CompanyName->setGeometry(QRect(620, 100, 120, 25));
+        CompanyName->setInputMethodHints(Qt::ImhNone);
 
         retranslateUi(case_reportcaseinfoForm);
 
@@ -245,6 +246,7 @@ public:
         label_21->setText(QApplication::translate("case_reportcaseinfoForm", "\346\215\237\345\244\261\351\203\250\344\275\215", nullptr));
         Cancel->setText(QApplication::translate("case_reportcaseinfoForm", "\345\217\226\346\266\210", nullptr));
         Entry->setText(QApplication::translate("case_reportcaseinfoForm", "\345\275\225\345\205\245", nullptr));
+        CompanyName->setText(QString());
     } // retranslateUi
 
 };

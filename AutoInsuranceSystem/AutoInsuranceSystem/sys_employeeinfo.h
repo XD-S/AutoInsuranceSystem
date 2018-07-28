@@ -1,14 +1,19 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+#include <iostream>
+#include <string>
 #include "ui_sys_employeeinfo.h"
-
+#include "AutoInsuranceSystem.h"
+#include "MySqlConnect.h"
+using namespace std;
+extern MySqlConnect *q;
 class sys_employeeinfo : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	sys_employeeinfo(QWidget *parent = Q_NULLPTR);
+	sys_employeeinfo(QWidget *parent = Q_NULLPTR, int items = -1);
 	//~insur_guaranteeslip();
 
 public slots:
@@ -16,7 +21,12 @@ public slots:
 	void Cancel_click();
 private:
 	void closeEvent(QCloseEvent *event);
+	void initQComboBox();
+	void LoadInformation();
+	string GetUpdateCommand();
+	string GetInsertCommand();
 
 	Ui::sys_employeeinfoForm ui;
 	QWidget *parent;
+	int item;
 };

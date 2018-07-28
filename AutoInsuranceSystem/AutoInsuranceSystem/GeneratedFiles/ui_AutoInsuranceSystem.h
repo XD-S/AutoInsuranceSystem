@@ -31,6 +31,7 @@ public:
     QFrame *line_2;
     QPushButton *CompanyEntry;
     QTableView *CompanyTableView;
+    QPushButton *CompanyDelete;
     QWidget *tab;
     QFrame *line;
     QPushButton *Insured;
@@ -39,6 +40,7 @@ public:
     QFrame *line_3;
     QPushButton *PersonnelEntry;
     QTableView *PersonnelTableView;
+    QPushButton *PersonnelDelete;
     QWidget *tab_4;
     QFrame *line_4;
     QPushButton *ClaimEntry;
@@ -80,6 +82,9 @@ public:
         CompanyTableView->setSelectionMode(QAbstractItemView::SingleSelection);
         CompanyTableView->setShowGrid(true);
         CompanyTableView->setGridStyle(Qt::SolidLine);
+        CompanyDelete = new QPushButton(tab_2);
+        CompanyDelete->setObjectName(QStringLiteral("CompanyDelete"));
+        CompanyDelete->setGeometry(QRect(5, 60, 110, 40));
         tabWidget->addTab(tab_2, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
@@ -121,6 +126,9 @@ public:
         PersonnelTableView->setSelectionMode(QAbstractItemView::SingleSelection);
         PersonnelTableView->setShowGrid(true);
         PersonnelTableView->setGridStyle(Qt::SolidLine);
+        PersonnelDelete = new QPushButton(tab_3);
+        PersonnelDelete->setObjectName(QStringLiteral("PersonnelDelete"));
+        PersonnelDelete->setGeometry(QRect(5, 60, 110, 40));
         tabWidget->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
@@ -151,7 +159,7 @@ public:
 
         retranslateUi(AutoInsuranceSystemClass);
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(AutoInsuranceSystemClass);
@@ -161,10 +169,12 @@ public:
     {
         AutoInsuranceSystemClass->setWindowTitle(QApplication::translate("AutoInsuranceSystemClass", "AutoInsuranceSystem", nullptr));
         CompanyEntry->setText(QApplication::translate("AutoInsuranceSystemClass", "\345\205\254\345\217\270\345\275\225\345\205\245", nullptr));
+        CompanyDelete->setText(QApplication::translate("AutoInsuranceSystemClass", "\345\210\240\351\231\244", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("AutoInsuranceSystemClass", "\345\237\272\347\241\200\350\256\276\347\275\256", nullptr));
         Insured->setText(QApplication::translate("AutoInsuranceSystemClass", "\350\275\246\351\231\251\345\275\225\345\205\245", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("AutoInsuranceSystemClass", "\344\277\235\345\215\225\347\256\241\347\220\206", nullptr));
         PersonnelEntry->setText(QApplication::translate("AutoInsuranceSystemClass", "\344\272\272\345\221\230\345\275\225\345\205\245", nullptr));
+        PersonnelDelete->setText(QApplication::translate("AutoInsuranceSystemClass", "\345\210\240\351\231\244", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("AutoInsuranceSystemClass", "\345\233\242\351\230\237\347\256\241\347\220\206", nullptr));
         ClaimEntry->setText(QApplication::translate("AutoInsuranceSystemClass", "\347\220\206\350\265\224\345\275\225\345\205\245", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("AutoInsuranceSystemClass", "\347\220\206\350\265\224\347\256\241\347\220\206", nullptr));

@@ -10,6 +10,8 @@
 #include "sys_employeeinfo.h"
 #include "case_reportcaseinfo.h"
 #include "MySqlConnect.h"
+#include "CommonHelper.h"
+
 extern MySqlConnect *q;
 class AutoInsuranceSystem : public QMainWindow
 {
@@ -17,15 +19,21 @@ class AutoInsuranceSystem : public QMainWindow
 
 public:
 	AutoInsuranceSystem(QWidget *parent = Q_NULLPTR);
-	void UpdateViewTable();
+	void UpdateViewTable(string TableName="");
 
 public slots:
 	void Insured_click();
 	void CompanyEntry_click();
 	void PersonnelEntry_click();
 	void ClaimEntry_click();
+	void CompanyDelete_click();
+	void PersonnelDelete_click();
 
+	void CompanyViewTableDoubleClicked(const QModelIndex &index);
+	void PersonnelViewTableDoubleClicked(const QModelIndex &index);
 private:
+	string GetDeleteCommand(string TableName,int item);
+
 	Ui::AutoInsuranceSystemClass ui;
 	QStandardItemModel *InsuredModel;//保单管理的表头初始化设置
 	QStandardItemModel *CompanyModel;//基础设置的表头初始化
