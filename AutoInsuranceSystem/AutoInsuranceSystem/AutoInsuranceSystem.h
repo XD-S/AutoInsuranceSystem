@@ -11,6 +11,8 @@
 #include "case_reportcaseinfo.h"
 #include "MySqlConnect.h"
 #include "CommonHelper.h"
+#include "Inquire.h"
+//#include "Login.h"
 
 extern MySqlConnect *q;
 class AutoInsuranceSystem : public QMainWindow
@@ -18,9 +20,16 @@ class AutoInsuranceSystem : public QMainWindow
 	Q_OBJECT
 
 public:
+	QStandardItemModel *InsuredModel;//保单管理的表头初始化设置
+	QStandardItemModel *CompanyModel;//基础设置的表头初始化
+	QStandardItemModel *PersonnelModel;//团队管理的表头初始化
+	QStandardItemModel *ClaimModel;//理赔管理的表头初始化
+	QStandardItemModel *InquireModel;//查询表头的初始化
+
 	AutoInsuranceSystem(QWidget *parent = Q_NULLPTR);
 	void UpdateViewTable(string TableName="");
 
+	
 public slots:
 	void Insured_click();
 	void CompanyEntry_click();
@@ -28,17 +37,21 @@ public slots:
 	void ClaimEntry_click();
 	void CompanyDelete_click();
 	void PersonnelDelete_click();
+	void ClaimlDelete_click();
+	void InsuredDelete_click();
+	void PlateNumberInquiry_click();
+	void ManagerInquiry_click();
 
 	void CompanyViewTableDoubleClicked(const QModelIndex &index);
 	void PersonnelViewTableDoubleClicked(const QModelIndex &index);
+	void ClaimViewTableDoubleClicked(const QModelIndex &index);
+	void InsuredViewTableDoubleClicked(const QModelIndex &index);
+
 private:
 	string GetDeleteCommand(string TableName,int item);
 
 	Ui::AutoInsuranceSystemClass ui;
-	QStandardItemModel *InsuredModel;//保单管理的表头初始化设置
-	QStandardItemModel *CompanyModel;//基础设置的表头初始化
-	QStandardItemModel *PersonnelModel;//团队管理的表头初始化
-	QStandardItemModel *ClaimModel;//理赔管理的表头初始化
+
 
 	char InsuredTableViewItem[10][20] =
 	{
@@ -83,6 +96,19 @@ private:
 		u8"实际理赔金额",
 		u8"案件归口部门",
 		u8"案件发生地点"
+	};
+	char InquireTableViewItem[11][20] =
+	{
+		u8"投保日期",
+		u8"保险到期",
+		u8"交强险号",
+		u8"商业险号",
+		u8"联系人",
+		u8"联系电话",
+		u8"身份证号",
+		u8"经办人",
+		u8"归口部门",
+		u8"保费缴纳状况"
 	};
 	/*insur_guaranteeslip * d = Q_NULLPTR;*/
 };

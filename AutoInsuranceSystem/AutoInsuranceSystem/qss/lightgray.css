@@ -2,16 +2,18 @@ QPalette{background:#F0F0F0;}QGroupBox#gboxDevicePanel>QLabel{color:#6F6F6F;}
 
 QWidget#frmMain,QWidget[Form="true"]{
 border:1px solid #D4D0C8;
-border-radius:0px;
+border-radius:10px;
 }
 
 .QFrame{
 border:1px solid #DCDCDC;
-border-radius:5px;
+border-radius:10px;
 }
-
-QLabel,QLineEdit,QTextEdit,QPlainTextEdit,QSpinBox,QGroupBox,QComboBox,QDateEdit,QTimeEdit,QDateTimeEdit,QSpinBox,QTreeView,QListView,QTableView,QTabWidget::pane{
-color:#6F6F6F;
+QLineEdit:!enabled {
+    background-color:#E5E5E5;
+}
+QLabel, QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox, QGroupBox, QComboBox, QDateEdit, QTimeEdit, QDateTimeEdit, QSpinBox, QTreeView, QListView, QTableView, QTabWidget::pane {
+    color:#6F6F6F;
 }
 
 QWidget#widget_title{
@@ -51,17 +53,17 @@ border:1px solid #FF0000;
 background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #FCFCFC,stop:1 #F7F7F7);
 }
 
-QLineEdit,QTextEdit,QPlainTextEdit,QSpinBox{
-border:1px solid #DCDCDC;
-border-radius:5px;
-padding:2px;
-background:none;
-selection-background-color:#EEEEEE;
-selection-color:#6F6F6F;
+QLineEdit, QTextEdit,QPlainTextEdit, QSpinBox {
+    border: 1px solid #DCDCDC;
+    border-radius: 12px;
+    padding: 2px;
+    background: none;
+    selection-background-color: #EEEEEE;
+    selection-color: #6F6F6F;
 }
 
-QLineEdit[echoMode="2"]{
-lineedit-password-character:9679;
+QLineEdit[echoMode="2"] {
+    lineedit-password-character: 9679;
 }
 
 .QGroupBox{
@@ -75,12 +77,13 @@ border:1px solid #DCDCDC;
 color:#6F6F6F;
 padding:5px;
 min-height:20px;
-border-radius:5px;
+border-radius:20px;
 background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #EEEEEE,stop:1 #E5E5E5);
 }
 
 .QPushButton:hover{
 background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #FCFCFC,stop:1 #F7F7F7);
+color:green;
 }
 
 .QPushButton:pressed{
@@ -157,7 +160,7 @@ image:url(:/image/add_bottom.png);
 }
 
 QComboBox,QDateEdit,QTimeEdit,QDateTimeEdit,QSpinBox{
-border-radius:3px;
+border-radius:10px;
 padding:3px 5px 3px 5px;
 border:1px solid #DCDCDC;
 background:none;
@@ -355,7 +358,7 @@ background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #FCFCFC,stop:1 
 }
 
 QTabBar::tab{
-border-radius:5px;
+border-radius:10px;
 border:1px solid #DCDCDC;
 color:#6F6F6F;
 min-width:55px;

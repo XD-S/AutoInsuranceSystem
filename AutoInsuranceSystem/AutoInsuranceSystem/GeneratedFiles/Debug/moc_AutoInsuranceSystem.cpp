@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AutoInsuranceSystem_t {
-    QByteArrayData data[12];
-    char stringdata0[214];
+    QByteArrayData data[18];
+    char stringdata0[357];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,18 +39,27 @@ QT_MOC_LITERAL(4, 54, 20), // "PersonnelEntry_click"
 QT_MOC_LITERAL(5, 75, 16), // "ClaimEntry_click"
 QT_MOC_LITERAL(6, 92, 19), // "CompanyDelete_click"
 QT_MOC_LITERAL(7, 112, 21), // "PersonnelDelete_click"
-QT_MOC_LITERAL(8, 134, 29), // "CompanyViewTableDoubleClicked"
-QT_MOC_LITERAL(9, 164, 11), // "QModelIndex"
-QT_MOC_LITERAL(10, 176, 5), // "index"
-QT_MOC_LITERAL(11, 182, 31) // "PersonnelViewTableDoubleClicked"
+QT_MOC_LITERAL(8, 134, 18), // "ClaimlDelete_click"
+QT_MOC_LITERAL(9, 153, 19), // "InsuredDelete_click"
+QT_MOC_LITERAL(10, 173, 24), // "PlateNumberInquiry_click"
+QT_MOC_LITERAL(11, 198, 20), // "ManagerInquiry_click"
+QT_MOC_LITERAL(12, 219, 29), // "CompanyViewTableDoubleClicked"
+QT_MOC_LITERAL(13, 249, 11), // "QModelIndex"
+QT_MOC_LITERAL(14, 261, 5), // "index"
+QT_MOC_LITERAL(15, 267, 31), // "PersonnelViewTableDoubleClicked"
+QT_MOC_LITERAL(16, 299, 27), // "ClaimViewTableDoubleClicked"
+QT_MOC_LITERAL(17, 327, 29) // "InsuredViewTableDoubleClicked"
 
     },
     "AutoInsuranceSystem\0Insured_click\0\0"
     "CompanyEntry_click\0PersonnelEntry_click\0"
     "ClaimEntry_click\0CompanyDelete_click\0"
-    "PersonnelDelete_click\0"
-    "CompanyViewTableDoubleClicked\0QModelIndex\0"
-    "index\0PersonnelViewTableDoubleClicked"
+    "PersonnelDelete_click\0ClaimlDelete_click\0"
+    "InsuredDelete_click\0PlateNumberInquiry_click\0"
+    "ManagerInquiry_click\0CompanyViewTableDoubleClicked\0"
+    "QModelIndex\0index\0PersonnelViewTableDoubleClicked\0"
+    "ClaimViewTableDoubleClicked\0"
+    "InsuredViewTableDoubleClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -60,7 +69,7 @@ static const uint qt_meta_data_AutoInsuranceSystem[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -68,14 +77,20 @@ static const uint qt_meta_data_AutoInsuranceSystem[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   54,    2, 0x0a /* Public */,
-       3,    0,   55,    2, 0x0a /* Public */,
-       4,    0,   56,    2, 0x0a /* Public */,
-       5,    0,   57,    2, 0x0a /* Public */,
-       6,    0,   58,    2, 0x0a /* Public */,
-       7,    0,   59,    2, 0x0a /* Public */,
-       8,    1,   60,    2, 0x0a /* Public */,
-      11,    1,   63,    2, 0x0a /* Public */,
+       1,    0,   84,    2, 0x0a /* Public */,
+       3,    0,   85,    2, 0x0a /* Public */,
+       4,    0,   86,    2, 0x0a /* Public */,
+       5,    0,   87,    2, 0x0a /* Public */,
+       6,    0,   88,    2, 0x0a /* Public */,
+       7,    0,   89,    2, 0x0a /* Public */,
+       8,    0,   90,    2, 0x0a /* Public */,
+       9,    0,   91,    2, 0x0a /* Public */,
+      10,    0,   92,    2, 0x0a /* Public */,
+      11,    0,   93,    2, 0x0a /* Public */,
+      12,    1,   94,    2, 0x0a /* Public */,
+      15,    1,   97,    2, 0x0a /* Public */,
+      16,    1,  100,    2, 0x0a /* Public */,
+      17,    1,  103,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -84,8 +99,14 @@ static const uint qt_meta_data_AutoInsuranceSystem[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 9,   10,
-    QMetaType::Void, 0x80000000 | 9,   10,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 13,   14,
+    QMetaType::Void, 0x80000000 | 13,   14,
+    QMetaType::Void, 0x80000000 | 13,   14,
+    QMetaType::Void, 0x80000000 | 13,   14,
 
        0        // eod
 };
@@ -102,8 +123,14 @@ void AutoInsuranceSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 3: _t->ClaimEntry_click(); break;
         case 4: _t->CompanyDelete_click(); break;
         case 5: _t->PersonnelDelete_click(); break;
-        case 6: _t->CompanyViewTableDoubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 7: _t->PersonnelViewTableDoubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 6: _t->ClaimlDelete_click(); break;
+        case 7: _t->InsuredDelete_click(); break;
+        case 8: _t->PlateNumberInquiry_click(); break;
+        case 9: _t->ManagerInquiry_click(); break;
+        case 10: _t->CompanyViewTableDoubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 11: _t->PersonnelViewTableDoubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 12: _t->ClaimViewTableDoubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 13: _t->InsuredViewTableDoubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -134,13 +161,13 @@ int AutoInsuranceSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 14)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 14;
     }
     return _id;
 }

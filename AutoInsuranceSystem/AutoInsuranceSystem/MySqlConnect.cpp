@@ -4,7 +4,11 @@ MySqlConnect::MySqlConnect(string IP, string username, string password, string d
 {
 	database = databases;
 	mysql_init(&mysql);
-	try
+	if (!mysql_real_connect(&mysql, IP.c_str(), username.c_str(), password.c_str(), database.c_str(), 3306, NULL, 0))
+	{
+		throw string("CONNECT FAILED");
+	}
+	/*try
 	{
 		if (!mysql_real_connect(&mysql, IP.c_str(), username.c_str(), password.c_str(), database.c_str(), 3306, NULL, 0))
 		{
@@ -18,7 +22,7 @@ MySqlConnect::MySqlConnect(string IP, string username, string password, string d
 	catch (...)
 	{
 		cout << "MySQL operation is error" << endl;
-	}
+	}*/
 }
 
 void MySqlConnect::closeConnect()
@@ -77,6 +81,51 @@ void MySqlConnect::AddItem(string TableName, QStandardItemModel * Model, vector<
 			throw string(mysql_error(&mysql));
 		}
 		int k = 0;
+		//释放Model的内存
+		CommonHelper::clearModel(Model);
+		while (row = mysql_fetch_row(result))
+		{
+			for (int i = 0; i < items.size(); i++)
+			{
+				QString str = QString(row[items[i]]);
+				QStandardItem * temp = new QStandardItem(str);
+				temp->setEditable(false);
+				Model->setItem(k, i, temp);
+			}
+			k++;
+		}
+	}
+	catch (string &error_msg)
+	{
+		cout << error_msg << endl;
+	}
+	catch (...)
+	{
+		cout << "MySQL operation is error" << endl;
+	}
+}
+
+void MySqlConnect::AddItem(string TableName, string title, string value, QStandardItemModel * Model, vector<int> items)
+{
+	try
+	{
+		mysql_query(&mysql, "set names utf8");
+		if (mysql_query(&mysql, ("use " + database + ";").c_str()))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		if (mysql_query(&mysql, ("select * from `" + TableName + "` where `"+title+"` = '"+value+"';").c_str()))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		if (result != NULL) mysql_free_result(result);
+		if (!(result = mysql_store_result(&mysql)))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		int k = 0;
+		//释放Model的内存
+		CommonHelper::clearModel(Model);
 		while (row = mysql_fetch_row(result))
 		{
 			for (int i = 0; i < items.size(); i++)
@@ -137,11 +186,12 @@ bool MySqlConnect::Command(string command)
 		if (mysql_query(&mysql, command.c_str()))
 		{
 			throw string(mysql_error(&mysql));
-		}
+			}
 		return true;
 	}
 	catch (string &error_msg)
 	{
+		QMessageBox::critical(NULL, u8"提示：", QString::fromStdString(error_msg));
 		cout << error_msg << endl;
 		return false;
 	}
@@ -154,7 +204,7 @@ bool MySqlConnect::Command(string command)
 
 string MySqlConnect::GetItemSelect(string TableName, string Colunms, int item)
 {
-	try
+	/*try
 	{
 		if (mysql_query(&mysql, ("use " + database + ";").c_str()))
 		{
@@ -181,8 +231,43 @@ string MySqlConnect::GetItemSelect(string TableName, string Colunms, int item)
 	{
 		cout << "MySQL operation is error" << endl;
 		return "";
-	}
+	}*/
+	return this->GetItemSelect(TableName,Colunms,"id",to_string(item));
 
+}
+
+string MySqlConnect::GetItemSelect(string TableName, string Colunms, string title, string value)
+{
+	try
+	{
+		if (mysql_query(&mysql, ("use " + database + ";").c_str()))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		if (mysql_query(&mysql, ("select `" + Colunms + "` from `" + TableName + "` where `"+ title +"` = '" + value + "';").c_str()))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		
+		MYSQL_RES *results = NULL;
+		if (!(results = mysql_store_result(&mysql)))
+		{
+			throw string(mysql_error(&mysql));
+		}
+		row = mysql_fetch_row(results);
+		mysql_free_result(results);
+		return string(row[0]);
+	}
+	catch (string &error_msg)
+	{
+		cout << error_msg << endl;
+		return "";
+	}
+	catch (...)
+	{
+		cout << "MySQL operation is error" << endl;
+		return "";
+	}
 }
 
 void MySqlConnect::AddComboBoxItem(string TableName, string Colunms, QComboBox * comboBox)

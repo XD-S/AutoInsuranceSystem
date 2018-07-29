@@ -20,7 +20,6 @@ sys_employeeinfo::sys_employeeinfo(QWidget *parent,int items)
 	if (item != -1)
 	{
 		ui.Entry->setText(u8"修改");
-		this->LoadInformation();
 	}
 }
 void sys_employeeinfo::Cancel_click()
@@ -31,13 +30,21 @@ void sys_employeeinfo::Entry_click()
 {
 	if (item == -1)
 	{
-		q->Command(this->GetInsertCommand());
+		if (!q->Command(this->GetInsertCommand()))
+		{
+			QMessageBox::critical(NULL, u8"提示：", u8"录入信息失败！！");
+			return;
+		}
 		q->UpdateId("sys_employeeinfo");
 		QMessageBox::about(this, u8"提示：", u8"录入信息成功！！");
 	}
 	else
 	{
-		q->Command(this->GetUpdateCommand());
+		if (!q->Command(this->GetUpdateCommand()))
+		{
+			QMessageBox::critical(NULL, u8"提示：", u8"修改信息失败！！");
+			return;
+		}
 		q->UpdateId("sys_employeeinfo");
 		QMessageBox::about(this, u8"提示：", u8"修改信息成功！！");
 	}

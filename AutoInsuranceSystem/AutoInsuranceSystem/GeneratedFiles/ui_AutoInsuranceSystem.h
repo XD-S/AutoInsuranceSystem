@@ -36,6 +36,7 @@ public:
     QFrame *line;
     QPushButton *Insured;
     QTableView *InsuredTableView;
+    QPushButton *InsuredDelete;
     QWidget *tab_3;
     QFrame *line_3;
     QPushButton *PersonnelEntry;
@@ -45,7 +46,12 @@ public:
     QFrame *line_4;
     QPushButton *ClaimEntry;
     QTableView *ClaimTableView;
+    QPushButton *ClaimDelete;
     QWidget *tab_5;
+    QTableView *InquireTableView;
+    QFrame *line_5;
+    QPushButton *ManagerInquiry;
+    QPushButton *PlateNumberInquiry;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *AutoInsuranceSystemClass)
@@ -104,10 +110,14 @@ public:
         InsuredTableView->setSelectionMode(QAbstractItemView::SingleSelection);
         InsuredTableView->setShowGrid(true);
         InsuredTableView->setGridStyle(Qt::SolidLine);
+        InsuredDelete = new QPushButton(tab);
+        InsuredDelete->setObjectName(QStringLiteral("InsuredDelete"));
+        InsuredDelete->setGeometry(QRect(5, 60, 110, 40));
         tabWidget->addTab(tab, QString());
         Insured->raise();
         line->raise();
         InsuredTableView->raise();
+        InsuredDelete->raise();
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
         line_3 = new QFrame(tab_3);
@@ -148,9 +158,31 @@ public:
         ClaimTableView->setSelectionMode(QAbstractItemView::SingleSelection);
         ClaimTableView->setShowGrid(true);
         ClaimTableView->setGridStyle(Qt::SolidLine);
+        ClaimDelete = new QPushButton(tab_4);
+        ClaimDelete->setObjectName(QStringLiteral("ClaimDelete"));
+        ClaimDelete->setGeometry(QRect(5, 60, 110, 40));
         tabWidget->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
+        InquireTableView = new QTableView(tab_5);
+        InquireTableView->setObjectName(QStringLiteral("InquireTableView"));
+        InquireTableView->setGeometry(QRect(135, 0, 1050, 800));
+        InquireTableView->setStyleSheet(QStringLiteral(""));
+        InquireTableView->setEditTriggers(QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
+        InquireTableView->setSelectionMode(QAbstractItemView::SingleSelection);
+        InquireTableView->setShowGrid(true);
+        InquireTableView->setGridStyle(Qt::SolidLine);
+        line_5 = new QFrame(tab_5);
+        line_5->setObjectName(QStringLiteral("line_5"));
+        line_5->setGeometry(QRect(120, 0, 10, 800));
+        line_5->setFrameShape(QFrame::VLine);
+        line_5->setFrameShadow(QFrame::Sunken);
+        ManagerInquiry = new QPushButton(tab_5);
+        ManagerInquiry->setObjectName(QStringLiteral("ManagerInquiry"));
+        ManagerInquiry->setGeometry(QRect(5, 60, 110, 40));
+        PlateNumberInquiry = new QPushButton(tab_5);
+        PlateNumberInquiry->setObjectName(QStringLiteral("PlateNumberInquiry"));
+        PlateNumberInquiry->setGeometry(QRect(5, 10, 110, 40));
         tabWidget->addTab(tab_5, QString());
         AutoInsuranceSystemClass->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(AutoInsuranceSystemClass);
@@ -159,7 +191,7 @@ public:
 
         retranslateUi(AutoInsuranceSystemClass);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(AutoInsuranceSystemClass);
@@ -172,12 +204,16 @@ public:
         CompanyDelete->setText(QApplication::translate("AutoInsuranceSystemClass", "\345\210\240\351\231\244", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("AutoInsuranceSystemClass", "\345\237\272\347\241\200\350\256\276\347\275\256", nullptr));
         Insured->setText(QApplication::translate("AutoInsuranceSystemClass", "\350\275\246\351\231\251\345\275\225\345\205\245", nullptr));
+        InsuredDelete->setText(QApplication::translate("AutoInsuranceSystemClass", "\345\210\240\351\231\244", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("AutoInsuranceSystemClass", "\344\277\235\345\215\225\347\256\241\347\220\206", nullptr));
         PersonnelEntry->setText(QApplication::translate("AutoInsuranceSystemClass", "\344\272\272\345\221\230\345\275\225\345\205\245", nullptr));
         PersonnelDelete->setText(QApplication::translate("AutoInsuranceSystemClass", "\345\210\240\351\231\244", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("AutoInsuranceSystemClass", "\345\233\242\351\230\237\347\256\241\347\220\206", nullptr));
         ClaimEntry->setText(QApplication::translate("AutoInsuranceSystemClass", "\347\220\206\350\265\224\345\275\225\345\205\245", nullptr));
+        ClaimDelete->setText(QApplication::translate("AutoInsuranceSystemClass", "\345\210\240\351\231\244", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("AutoInsuranceSystemClass", "\347\220\206\350\265\224\347\256\241\347\220\206", nullptr));
+        ManagerInquiry->setText(QApplication::translate("AutoInsuranceSystemClass", "\347\273\217\345\212\236\344\272\272\346\237\245\350\257\242", nullptr));
+        PlateNumberInquiry->setText(QApplication::translate("AutoInsuranceSystemClass", "\345\217\267\347\211\214\346\237\245\350\257\242", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("AutoInsuranceSystemClass", "\350\265\204\346\226\231\347\256\241\347\220\206", nullptr));
     } // retranslateUi
 

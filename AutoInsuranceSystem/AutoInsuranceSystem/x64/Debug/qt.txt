@@ -1,1 +1,0 @@
-Rcc'ing AutoInsuranceSystem.qrc...;D:\Qt\Qt5.11.1\5.11.1\msvc2017_64\bin\rcc.exe;"F:\github\AutoInsuranceSystem\AutoInsuranceSystem\AutoInsuranceSystem\AutoInsuranceSystem.qrc" -o ".\GeneratedFiles\qrc_AutoInsuranceSystem.cpp" --name AutoInsuranceSystem

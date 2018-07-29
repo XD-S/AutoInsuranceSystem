@@ -51,6 +51,12 @@
     <ClCompile Include="MySqlConnect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Inquire.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AutoInsuranceSystem.h">
@@ -68,6 +74,12 @@
     <QtMoc Include="case_reportcaseinfo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Login.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Inquire.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AutoInsuranceSystem.ui">
@@ -83,6 +95,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="case_reportcaseinfo.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Login.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Inquire.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

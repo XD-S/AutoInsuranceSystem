@@ -53,7 +53,7 @@
   <widget class="QDateEdit" name="InsuranceStartDate">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>100</x>
      <y>80</y>
      <width>110</width>
      <height>25</height>
@@ -76,7 +76,7 @@
   <widget class="QDateEdit" name="InsuranceEndDate">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>350</x>
      <y>80</y>
      <width>110</width>
      <height>25</height>
@@ -89,7 +89,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>530</x>
      <y>80</y>
      <width>60</width>
      <height>25</height>
@@ -125,7 +125,7 @@
   <widget class="QLineEdit" name="CommercialRiskCode">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>100</x>
      <y>120</y>
      <width>250</width>
      <height>25</height>
@@ -180,7 +180,7 @@
   <widget class="QLineEdit" name="Contacts">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>100</x>
      <y>160</y>
      <width>110</width>
      <height>25</height>
@@ -209,7 +209,7 @@
   <widget class="QLineEdit" name="Telephone">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>350</x>
      <y>160</y>
      <width>110</width>
      <height>25</height>
@@ -235,7 +235,7 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>530</x>
      <y>160</y>
      <width>60</width>
      <height>25</height>
@@ -267,7 +267,7 @@
   <widget class="QComboBox" name="Agent">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>100</x>
      <y>200</y>
      <width>110</width>
      <height>25</height>
@@ -280,7 +280,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>350</x>
      <y>200</y>
      <width>110</width>
      <height>25</height>
@@ -309,7 +309,7 @@
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>530</x>
      <y>200</y>
      <width>60</width>
      <height>25</height>
@@ -358,7 +358,7 @@
   <widget class="QDateEdit" name="InsurancePaymentDate">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>100</x>
      <y>240</y>
      <width>110</width>
      <height>25</height>
@@ -368,7 +368,7 @@
   <widget class="QComboBox" name="PaymentMethod">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>350</x>
      <y>240</y>
      <width>110</width>
      <height>25</height>
@@ -426,11 +426,14 @@
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
    </property>
+   <property name="text">
+    <string>0</string>
+   </property>
   </widget>
   <widget class="QLabel" name="label_15">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>530</x>
      <y>240</y>
      <width>60</width>
      <height>25</height>
@@ -449,7 +452,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>100</x>
      <y>280</y>
      <width>110</width>
      <height>25</height>
@@ -457,6 +460,9 @@
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
+   </property>
+   <property name="text">
+    <string>0</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_16">
@@ -497,7 +503,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>350</x>
      <y>280</y>
      <width>110</width>
      <height>25</height>
@@ -506,6 +512,9 @@
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
    </property>
+   <property name="text">
+    <string>0</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="StrongPreferenceRatio">
    <property name="enabled">
@@ -513,7 +522,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>610</x>
      <y>280</y>
      <width>30</width>
      <height>25</height>
@@ -526,7 +535,7 @@
   <widget class="QLabel" name="label_18">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>530</x>
      <y>280</y>
      <width>60</width>
      <height>25</height>
@@ -558,7 +567,7 @@
   <widget class="QLabel" name="label_19">
    <property name="geometry">
     <rect>
-     <x>670</x>
+     <x>660</x>
      <y>280</y>
      <width>60</width>
      <height>25</height>
@@ -593,7 +602,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>100</x>
      <y>320</y>
      <width>110</width>
      <height>25</height>
@@ -601,6 +610,9 @@
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
+   </property>
+   <property name="text">
+    <string>0</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_21">
@@ -625,7 +637,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>350</x>
      <y>320</y>
      <width>110</width>
      <height>25</height>
@@ -633,6 +645,9 @@
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
+   </property>
+   <property name="text">
+    <string>0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="TotalReceivable">
@@ -650,11 +665,14 @@
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
    </property>
+   <property name="text">
+    <string>0</string>
+   </property>
   </widget>
   <widget class="QLabel" name="label_22">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>530</x>
      <y>320</y>
      <width>60</width>
      <height>25</height>
@@ -682,11 +700,14 @@
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
    </property>
+   <property name="text">
+    <string>0</string>
+   </property>
   </widget>
   <widget class="QLabel" name="label_23">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>530</x>
      <y>360</y>
      <width>60</width>
      <height>25</height>
@@ -747,7 +768,7 @@
     <widget class="QLineEdit" name="PlateNumber">
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>320</x>
        <y>10</y>
        <width>130</width>
        <height>25</height>
@@ -776,7 +797,7 @@
     <widget class="QLineEdit" name="FrameNumber">
      <property name="geometry">
       <rect>
-       <x>550</x>
+       <x>560</x>
        <y>10</y>
        <width>130</width>
        <height>25</height>
@@ -789,7 +810,7 @@
     <widget class="QLabel" name="label_26">
      <property name="geometry">
       <rect>
-       <x>490</x>
+       <x>500</x>
        <y>10</y>
        <width>60</width>
        <height>25</height>
@@ -834,7 +855,7 @@
     <widget class="QLineEdit" name="EngineNumber">
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>320</x>
        <y>40</y>
        <width>130</width>
        <height>25</height>
@@ -863,7 +884,7 @@
     <widget class="QLineEdit" name="PolicyHolder">
      <property name="geometry">
       <rect>
-       <x>550</x>
+       <x>560</x>
        <y>40</y>
        <width>130</width>
        <height>25</height>
@@ -876,7 +897,7 @@
     <widget class="QLabel" name="label_29">
      <property name="geometry">
       <rect>
-       <x>490</x>
+       <x>500</x>
        <y>40</y>
        <width>60</width>
        <height>25</height>
@@ -921,7 +942,7 @@
     <widget class="QLineEdit" name="SeatingNumber">
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>320</x>
        <y>70</y>
        <width>130</width>
        <height>25</height>
@@ -950,7 +971,7 @@
     <widget class="QLineEdit" name="InsurancedPerson">
      <property name="geometry">
       <rect>
-       <x>550</x>
+       <x>560</x>
        <y>70</y>
        <width>130</width>
        <height>25</height>
@@ -963,7 +984,7 @@
     <widget class="QLabel" name="label_32">
      <property name="geometry">
       <rect>
-       <x>490</x>
+       <x>500</x>
        <y>70</y>
        <width>60</width>
        <height>25</height>
@@ -1002,7 +1023,7 @@
     <widget class="QLineEdit" name="NewCarPurchasePrice">
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>320</x>
        <y>100</y>
        <width>130</width>
        <height>25</height>
@@ -1078,7 +1099,7 @@
     <widget class="QLineEdit" name="VehicleLossInsurance">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>80</x>
        <y>10</y>
        <width>110</width>
        <height>25</height>
@@ -1091,7 +1112,7 @@
     <widget class="QLineEdit" name="InsurancePremiumPorLossOfVehicle">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>200</x>
        <y>10</y>
        <width>110</width>
        <height>25</height>
@@ -1104,7 +1125,7 @@
     <widget class="QLabel" name="label_37">
      <property name="geometry">
       <rect>
-       <x>410</x>
+       <x>400</x>
        <y>10</y>
        <width>60</width>
        <height>25</height>
@@ -1133,7 +1154,7 @@
     <widget class="QLineEdit" name="ThirdPartyLiabilityInsurancePremium">
      <property name="geometry">
       <rect>
-       <x>580</x>
+       <x>590</x>
        <y>10</y>
        <width>110</width>
        <height>25</height>
@@ -1146,7 +1167,7 @@
     <widget class="QLineEdit" name="SpontaneousCombustionLossInsurance">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>80</x>
        <y>50</y>
        <width>110</width>
        <height>25</height>
@@ -1175,7 +1196,7 @@
     <widget class="QLineEdit" name="SpontaneousCombustionLossInsurancePremium">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>200</x>
        <y>50</y>
        <width>110</width>
        <height>25</height>
@@ -1201,7 +1222,7 @@
     <widget class="QLabel" name="label_39">
      <property name="geometry">
       <rect>
-       <x>410</x>
+       <x>400</x>
        <y>50</y>
        <width>60</width>
        <height>25</height>
@@ -1217,7 +1238,7 @@
     <widget class="QLineEdit" name="ScarInsurancePremium">
      <property name="geometry">
       <rect>
-       <x>580</x>
+       <x>590</x>
        <y>50</y>
        <width>110</width>
        <height>25</height>
@@ -1230,7 +1251,7 @@
     <widget class="QLineEdit" name="InsuranceCoverage">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>80</x>
        <y>90</y>
        <width>110</width>
        <height>25</height>
@@ -1259,7 +1280,7 @@
     <widget class="QLineEdit" name="PremiumInsurancePremium">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>200</x>
        <y>90</y>
        <width>110</width>
        <height>25</height>
@@ -1272,7 +1293,7 @@
     <widget class="QLineEdit" name="Description_2">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>80</x>
        <y>130</y>
        <width>621</width>
        <height>25</height>

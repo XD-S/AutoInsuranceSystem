@@ -15,14 +15,14 @@ class sys_employeeinfo : public QMainWindow
 public:
 	sys_employeeinfo(QWidget *parent = Q_NULLPTR, int items = -1);
 	//~insur_guaranteeslip();
-
+	void LoadInformation();
 public slots:
 	void Entry_click();
 	void Cancel_click();
 private:
 	void closeEvent(QCloseEvent *event);
 	void initQComboBox();
-	void LoadInformation();
+
 	string GetUpdateCommand();
 	string GetInsertCommand();
 
